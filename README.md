@@ -27,3 +27,10 @@ Simple single web application made with [create-react-app](https://github.com/fa
 This application relies on external API service to get films information:
 
 * [TheMovieDB API](https://developers.themoviedb.org/3)
+
+---
+
+###### TODO:
+
+- Mobile Responsive
+- Experiment with HashRouter, withRouter, ...
