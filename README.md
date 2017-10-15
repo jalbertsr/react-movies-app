@@ -33,4 +33,5 @@ This application relies on external API service to get films information:
 ###### TODO:
 
 - Mobile Responsive
+- Add propTypes validation
 - Experiment with HashRouter, withRouter, ...
