@@ -13,24 +13,38 @@ export default class Showfilms extends Component {
     }
   }
 
+  componentWillMount () {
+    console.log('props', this.props)
+  }
+
+  handleApiCall () {
+    if (this.props.match.params.query) {
+      Api.getSearch(this.props.match.params.query)
+          .then(data => {
+            this.setState({
+              results: data.results
+            })
+            console.log(this.state)
+          })
+    } else {
+      Api.getMovies(this.props.category)
+          .then(data => {
+            this.setState({
+              results: data.results
+            })
+            console.log(this.state)
+          })
+    }
+  }
+
   componentWillReceiveProps (nextProps) {
-    Api.getMovies(this.props.category)
-    .then(data => {
-      this.setState({
-        results: data.results
-      })
-      console.log(this.state)
-    })
+    this.handleApiCall()
+    // this.forceUpdate()
   }
 
   componentDidMount () {
-    Api.getMovies(this.props.category)
-    .then(data => {
-      this.setState({
-        results: data.results
-      })
-      console.log(this.state)
-    })
+    this.handleApiCall()
+    // this.forceUpdate()
   }
 
   render () {
@@ -45,9 +59,8 @@ export default class Showfilms extends Component {
           {
             this.state.results.map(film => {
               return (
-                <Col className='gutter-row' span={5} offset={1}>
+                <Col className='gutter-row' span={5} offset={1} key={uuidv4()}>
                   <CardTemplate
-                    key={uuidv4()}
                     name={film.title}
                     date={film.release_date}
                     vote={film.vote_average}
