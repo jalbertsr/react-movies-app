@@ -23,7 +23,7 @@ const Routes = () => (
     <Route exact path='/search/:query' render={
       props => (<Showfilms currentPage='Search Results' {...props} />
     )} />
-    <Route path='/movie/:id' component={Movie} />
+    <Route exact path='/movie/:id' component={Movie} />
   </Switch>
 )
 

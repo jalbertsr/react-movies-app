@@ -13,38 +13,30 @@ export default class Showfilms extends Component {
     }
   }
 
-  componentWillMount () {
-    console.log('props', this.props)
-  }
-
-  handleApiCall () {
-    if (this.props.match.params.query) {
-      Api.getSearch(this.props.match.params.query)
+  handleApiCall (props) {
+    if (props.match.params.query) {
+      Api.getSearch(props.match.params.query)
           .then(data => {
             this.setState({
               results: data.results
             })
-            console.log(this.state)
           })
     } else {
-      Api.getMovies(this.props.category)
+      Api.getMovies(props.category)
           .then(data => {
             this.setState({
               results: data.results
             })
-            console.log(this.state)
           })
     }
   }
 
   componentWillReceiveProps (nextProps) {
-    this.handleApiCall()
-    // this.forceUpdate()
+    this.handleApiCall(nextProps)
   }
 
   componentDidMount () {
-    this.handleApiCall()
-    // this.forceUpdate()
+    this.handleApiCall(this.props)
   }
 
   render () {
