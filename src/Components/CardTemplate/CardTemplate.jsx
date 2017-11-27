@@ -1,8 +1,17 @@
+/* @flow */
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Card } from 'antd'
 
-const CardTamplate = ({name, date, vote, image, id}) => (
+type Props = {
+  name: number,
+  date: string, 
+  vote: number,
+  image: number, 
+  id: number
+}
+
+const CardTamplate = ({ name, date, vote, image, id }: Props) => (
   <Link to={`/movie/${id}`}>
     <Card style={{ width: 240 }} bodyStyle={{ padding: 0 }}>
       <div className='custom-image'>

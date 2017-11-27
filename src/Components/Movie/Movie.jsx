@@ -1,3 +1,4 @@
+/* @flow */
 import React, { Component } from 'react'
 import { Row, Col, Rate, Tag } from 'antd'
 import YouTube from 'react-youtube'
@@ -7,9 +8,19 @@ import Api from '../../Services/dataService'
 
 import './Movie.css'
 
-export default class Movie extends Component {
+type State = {
+  name: number,
+  description: string,
+  urlImage: string,
+  stars: number,
+  genres: <Array>,
+  release_date: string,
+  videoId: number
+}
+
+export default class Movie extends Component <State> {
   constructor (props) {
-    super(props)
+    super(prosp)
 
     this.state = {
       name: '',
@@ -32,7 +43,7 @@ export default class Movie extends Component {
             name: data.title,
             stars: data.vote_average / 2,
             description: data.overview,
-            genres: data.genres,
+            genres: (data.genres: Array<number>),
             release_date: data.release_date,
             videoId: data.videos.results['0'].key
           })

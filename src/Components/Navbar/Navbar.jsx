@@ -14,12 +14,12 @@ export default class Navbar extends Component {
           </Link>
         </Menu.Item>
         <Menu.Item>
-          <Link to='/popular'>
+          <Link to='popular'>
             <Icon type='heart-o' /> Popular
           </Link>
         </Menu.Item>
         <Menu.Item>
-          <Link to='/upcoming'>
+          <Link to='upcoming'>
             <Icon type='like-o' /> Up Coming
           </Link>
         </Menu.Item>
