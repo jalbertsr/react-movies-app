@@ -15,12 +15,10 @@ export default class SearchForm extends Component {
 
   handleChange = (e) => {
     this.setState({ value: e.target.value })
-    console.log('change', this.state.value)
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log('trigger submit', this.state.value)
     this.setState({ fireRedirect: true })
   }
 
