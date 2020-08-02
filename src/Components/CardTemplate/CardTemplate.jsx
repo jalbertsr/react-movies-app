@@ -2,6 +2,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Card } from 'antd'
+import './CardTemplate.css'
 
 type Props = {
   name: number,
@@ -13,7 +14,7 @@ type Props = {
 
 const CardTamplate = ({ name, date, vote, image, id }: Props) => (
   <Link to={`/movie/${id}`}>
-    <Card style={{ width: 240 }} bodyStyle={{ padding: 0 }}>
+    <Card className="h-100" bodyStyle={{ padding: 0 }}>
       <div className='custom-image'>
         <img alt={name} width='100%' src={`https://image.tmdb.org/t/p/w500${image}`} />
       </div>

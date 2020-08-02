@@ -31,3 +31,24 @@ hr {
 .trailer {
   margin-bottom: 1%;
 }
+
+.p-4 {
+  padding: 30px;
+}
+
+.w-100 {
+  width: 100%;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .xsFlex {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .xs-w-full {
+    width: 100%;
+  }
+  .xs-m-0 {
+    margin: 0;
+  }
+}

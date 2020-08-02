@@ -47,11 +47,11 @@ export default class Showfilms extends Component {
             <h1 className='title'>{ this.props.currentPage } </h1>
           </Col>
         </Row>
-        <Row gutter={24}>
+        <Row className="flex w-100 mx-auto px-40">
           {
             this.state.results.map(film => {
               return (
-                <Col className='gutter-row' span={5} offset={1} key={uuidv4()}>
+                <Col className='gutter-row min-h mb-20 w-14 w-full' key={uuidv4()}>
                   <CardTemplate
                     name={film.title}
                     date={film.release_date}

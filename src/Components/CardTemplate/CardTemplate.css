@@ -1,9 +1,16 @@
 .custom-image img {
   display: block;
+  margin: 0 !important;
 }
 .custom-card {
   padding: 10px 16px;
 }
 .custom-card p {
   color: #999;
+}
+img {
+  margin: 0;
+}
+.h-100 {
+  height: 100%;
 }
