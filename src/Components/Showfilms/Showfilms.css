@@ -5,3 +5,36 @@
   font-family: 'Asap', sans-serif;
   font-size: 5em;
 }
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.card-item {
+  margin-right:10px
+}
+.min-h {
+  min-height: 440px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.w-100{
+  width: 100%;
+}
+.mx-auto{
+  margin: 0 auto;
+}
+.px-40{
+  padding: 0 40px;
+}
+.w-14 {
+  width: 24%;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .w-full {
+    width: 100%;
+  }
+}

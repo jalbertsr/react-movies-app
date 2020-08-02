@@ -13,14 +13,14 @@ type State = {
   description: string,
   urlImage: string,
   stars: number,
-  genres: <Array>,
+  genres: any,
   release_date: string,
   videoId: number
 }
 
 export default class Movie extends Component <State> {
   constructor (props) {
-    super(prosp)
+    super(props)
 
     this.state = {
       name: '',
@@ -52,11 +52,11 @@ export default class Movie extends Component <State> {
 
   render () {
     return (
-      <Row>
-        <Col span={8} offset={1}>
-          <img alt={this.state.name} width='85%' src={`https://image.tmdb.org/t/p/w500${this.state.urlImage}`} />
+      <Row className="xsFlex p-4">
+        <Col span={8} offset={1} className="xs-m-0 xs-w-full">
+          <img alt={this.state.name} width='85%' className="xs-w-full" src={`https://image.tmdb.org/t/p/w500${this.state.urlImage}`} />
         </Col>
-        <Col span={12} offset={1}>
+        <Col span={12} offset={1} className="xs-m-0 xs-w-full">
           <h1>{this.state.name}</h1>
           <hr />
           <strong> Description: </strong>
@@ -73,7 +73,7 @@ export default class Movie extends Component <State> {
           <div className='trailer'>
             <strong> Trailer: </strong>
           </div>
-          <YouTube videoId={this.state.videoId} />
+          <YouTube className="w-100" videoId={this.state.videoId} />
         </Col>
       </Row>
     )
