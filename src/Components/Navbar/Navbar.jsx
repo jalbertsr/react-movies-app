@@ -13,22 +13,22 @@ export default function Navbar () {
         </Link>
       </Menu.Item>
       <Menu.Item>
-        <Link to='popular'>
+        <Link to='/popular'>
           <Icon type='heart-o' /> Popular
         </Link>
       </Menu.Item>
       <Menu.Item>
-        <Link to='upcoming'>
+        <Link to='/upcoming'>
           <Icon type='like-o' /> Up Coming
         </Link>
       </Menu.Item>
       <Menu.Item>
-        <Link to='nowplaying'>
+        <Link to='/nowplaying'>
           <Icon type='rocket' /> Now Playing
         </Link>
       </Menu.Item>
       <Menu.Item>
-        <Link to='toprated'>
+        <Link to='/toprated'>
           <Icon type='star-o' /> Top Rated
         </Link>
       </Menu.Item>
