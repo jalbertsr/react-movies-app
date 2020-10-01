@@ -13,14 +13,14 @@ type State = {
   description: string,
   urlImage: string,
   stars: number,
-  genres: <Array>,
+  genres: [],
   release_date: string,
   videoId: number
 }
 
 export default class Movie extends Component <State> {
   constructor (props) {
-    super(prosp)
+    super()
 
     this.state = {
       name: '',
@@ -38,15 +38,27 @@ export default class Movie extends Component <State> {
     Api.getMovieById(idFilm)
         .then(data => {
           console.log('dataApi', data)
-          this.setState({
-            urlImage: data.poster_path,
-            name: data.title,
-            stars: data.vote_average / 2,
-            description: data.overview,
-            genres: (data.genres: Array<number>),
-            release_date: data.release_date,
-            videoId: data.videos.results['0'].key
-          })
+          if(data.videos.results[0] === undefined) {
+            this.setState({
+              urlImage: data.poster_path,
+              name: data.title,
+              stars: data.vote_average / 2,
+              description: data.overview,
+              genres: (data.genres: Array<number>),
+              release_date: data.release_date,
+              videoId: null
+            })
+          } else {
+            this.setState({
+              urlImage: data.poster_path,
+              name: data.title,
+              stars: data.vote_average / 2,
+              description: data.overview,
+              genres: (data.genres: Array<number>),
+              release_date: data.release_date,
+              videoId: data.videos.results[0].key
+            })
+          }
         })
   }
 
@@ -73,7 +85,11 @@ export default class Movie extends Component <State> {
           <div className='trailer'>
             <strong> Trailer: </strong>
           </div>
-          <YouTube videoId={this.state.videoId} />
+          {
+            this.state.videoId !== null 
+            ? <YouTube videoId={this.state.videoId} />
+            : <h3>Trailer Not Available</h3>
+          }
         </Col>
       </Row>
     )
