@@ -5,7 +5,7 @@
   "homepage": "http://react-movie-finder.surge.sh",
   "dependencies": {
     "antd": "^2.13.6",
-    "axios": "^0.16.2",
+    "axios": "^0.21.1",
     "flow": "^0.2.3",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
